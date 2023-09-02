@@ -1,0 +1,36 @@
+.title {
+  font-size: 2em;
+  text-align: center;
+  border-bottom: 1px solid #E5E5E5;
+  padding: 0.7rem;
+}
+
+.title a {
+  color: black !important;
+  text-decoration: none;
+}
+
+.navbar {
+  font-size: 1.2em;
+  text-align: center;
+  color: #6C757D;
+  border-bottom: 1px solid #E5E5E5;
+  padding: 0.5rem;
+}
+
+.nav-item {
+  padding: 10px;
+  text-decoration: none;
+  color: #6C757D
+}
+
+.nav-item:visited,
+.nav-item:active,
+.nav-item:focus {
+  text-decoration: none;
+  color: #6C757D;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,39 @@
+<div *ngIf="article" class="wrapper">
+  <div class="property">
+    <label>Title:</label>
+    <input [(ngModel)]="article.title" type="text" (keyup)="updateKey()" (blur)="updateKey()">
+  </div>
+  <div class="property">
+    <label>Key:</label>
+    <input [(ngModel)]="article.key" type="text" disabled>
+  </div>
+  <div class="property">
+    <label>Date:</label>
+    <input [(ngModel)]="article.date" type="text">
+  </div>
+  <div class="property">
+    <label>Image Url:</label>
+    <input [(ngModel)]="article.imageUrl" type="text">
+  </div>
+  <div class="property">
+    <label>Description:</label>
+    <textarea [(ngModel)]="article.description" type="text" class="description"></textarea>
+    <div [class.max-characters]="article.description.length > 100" class="character-count">Characters: {{ article.description.length }}</div>
+  </div>
+  <div class="property">
+    <label>Content:</label>
+    <textarea [(ngModel)]="article.content" type="text"></textarea>
+  </div>
+  <div class="character-count">
+    Article is
+    <span *ngIf="article.published" style="color:green;">Online</span>
+    <span *ngIf="!article.published" style="color:red;">Offline</span>
+  </div>
+  <div>
+    <button *ngIf="!isNew" (click)="deleteArticle()" class="delete">Delete</button>
+    <button *ngIf="!isNew" (click)="viewPreview()" class="preview">Preview</button>
+    <button *ngIf="!isNew" (click)="updateArticle()">Update</button>
+    <button *ngIf="isNew" (click)="createArticle()">Save as Draft</button>
+    <div *ngIf="saved" class="saved">Saved. <a routerLink="../../{{ article.key }}">View Article</a></div>
+  </div>
+</div>

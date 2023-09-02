@@ -1,0 +1,27 @@
+<div class="overview">
+  <div class="overview-head center">
+    <div class="overview-cell"></div>
+    <div class="overview-cell">Title</div>
+    <div class="overview-cell">Date</div>
+    <div class="overview-cell">Views</div>
+    <div class="overview-cell">Online</div>
+    <div class="overview-cell"></div>
+  </div>
+  <div *ngFor="let article of articles" class="overview-row center">
+    <div class="overview-cell">
+      <img [src]="article.imageUrl" class="overview-image">
+    </div>
+    <div class="overview-cell">
+      <a routerLink="../{{ article.key }}">{{ article.title }}</a>
+    </div>
+    <div class="overview-cell">{{ article.date | date }}</div>
+    <div class="overview-cell">{{ article.viewCount }}</div>
+    <div class="overview-cell">
+      <span (click)="togglePublishState(article)"
+        [ngClass]="{'online' :article.published, 'offline': !article.published}" class="dot publish-icon"></span>
+    </div>
+    <div class="overview-cell">
+      <a routerLink="/dashboard/{{ article.key }}">Edit</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.meta-info {
+  color: grey;
+  margin-top: -28px;
+  font-size: 14px;
+}
+
+a {
+  color: gray;
+}
+
+button {
+  background-color: #F7F8FA;
+  border: 1px solid rgb(0, 0, 0, 0.125);
+  border-radius: 6px;
+  padding: 6px;
+  margin: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+input {
+  font-size: 21px;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #CCC;
+  margin: 2px;
+  text-indent: 2px;
+  width: 100%;
+}
